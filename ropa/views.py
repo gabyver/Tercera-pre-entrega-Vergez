@@ -67,15 +67,3 @@ def buscar_clientes(request):
         )
         return http_response
         
-
-
-def listar_clientes(request):
-    contexto = {
-        "clientes": Cliente.objects.all(),
-    }
-    http_response = render(
-        request = request,
-        template_name='ropa/lista_clientes.html',
-        context=contexto,
-    )
-    return http_response
