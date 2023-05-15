@@ -50,20 +50,3 @@ def listar_prendas(request):
         context=contexto,
     )
     return http_response
-
-
-def buscar_clientes(request):
-    if request.method == "POST":
-        data = request.POST
-        busqueda = data["busqueda"]
-        clientes = Cliente.objects.filter(cliente__icontains=busqueda)
-        contexto = {
-            "clientes": clientes,
-        }
-        http_response= render(
-            request = request,
-            template_name='ropa/busca_clientes.html',
-            context=contexto,
-        )
-        return http_response
-        
