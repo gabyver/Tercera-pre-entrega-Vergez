@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ropa.forms import agregar_prendas
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("agregar_prendas", agregar_prendas, name="agregar_prendas"),
 ]

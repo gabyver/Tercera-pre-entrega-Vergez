@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def agregar_prendas(request):
+def crear_prendas(request):
     if request.method == "POST":
         formulario = PrendaFormulario(request.POST)
         if formulario.is_valid():
@@ -9,9 +9,7 @@ def agregar_prendas(request):
             nombre = data["nombre"]
             categoria = data ["categoria"]
             precio = data ["precio"]
-            descripcion = data ["descripcion"]
-            prenda = Prenda
-            prenda.save()
+            prenda = Prenda.objects.create(nombre=nombre, categoria=categoria, precio=precio)
             url_exitosa = reverse ("lista_prendas")
             return redirect (url_exitosa)
         else:
