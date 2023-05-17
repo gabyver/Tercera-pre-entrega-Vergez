@@ -22,12 +22,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="">Prendas</a>
-                <a class="navbar-brand" href="#!">Clientes</a>
-                <a class="navbar-brand" href="#!">Categoria</a>
+                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'lista_prenda' %}">Prendas</a>
+                <a class="navbar-brand" href="{% url 'lista_cliente' %}">Clientes</a>
                 <a class="btn btn-primary" href="#signup">INICIAR</a>
             </div>
         </nav>
+
+        {% block contenido %}
+        {% endblock contenido %}
 
         <div>HOLA!!</div>
 

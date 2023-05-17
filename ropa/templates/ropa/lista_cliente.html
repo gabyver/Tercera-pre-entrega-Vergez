@@ -1,0 +1,19 @@
+{% extends "ropa/base.html" %}
+
+{% block contenido %}
+<section>
+    <div>
+        <h1>Lista de Clientes</h1>
+        <ul>
+        <a href="{% url 'crear_cliente' %}" class="btn btn-success">Crear Cliente</a>
+        <br><br>
+        <form action= "{% url 'buscar_clientes' %}" method= "post">
+            {% csrf_token %}
+            <input type="text" name="busqueda">
+            <input type="submit" value="Buscar clientes">
+            </form>
+            <br><br>
+        </ul>
+    </div>
+</section>
+{% endblock contenido %}
