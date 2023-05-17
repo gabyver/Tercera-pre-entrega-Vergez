@@ -1,13 +1,14 @@
 from django.shortcuts import render
-fron django.urls import reverse
-from tienda_ropa.models import Prenda, Cliente
+from django.urls import reverse
+from ropa.models import Prenda, Cliente
+from ropa.forms import PrendaFormulario, ClienteFormulario
 
 # Create your views here.
 def inicio(request):
     contexto= {}
     http_response = render(
         request=request,
-        template_name= 'tienda_ropa/index.html',
+        template_name= 'ropa/index.html',
         context=contexto,
     )
     return http_response

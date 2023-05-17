@@ -7,7 +7,7 @@
         <ul>
             {% for cliente in clientes %}
             <li>{{cliente.nombre}},{{cliente.apellido}}</li>
-                <a href="{% url 'crear_cliente' %}" class="btn btn-success">Crear Cliente</a>
+                <a href="{% url 'crear_clientes' %}" class="btn btn-success">Crear Cliente</a>
                 <br><br>
                 <form action= "{% url 'buscar_clientes' %}" method= "post">
                     {% csrf_token %}

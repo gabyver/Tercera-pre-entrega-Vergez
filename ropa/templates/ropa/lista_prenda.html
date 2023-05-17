@@ -7,7 +7,7 @@
         <ul>
             {% for prenda in prendas %}
             <li>{{prenda.nombre}},{{prenda.categoria}}</li>
-                <a href="{% url 'crear_prenda' %}" class="btn btn-success">Crear Prenda</a>
+                <a href="{% url 'crear_prendas' %}" class="btn btn-success">Crear Prenda</a>
                 <br><br>
                 <form action= "{% url 'buscar_prendas' %}" method= "post">
                     {% csrf_token %}
