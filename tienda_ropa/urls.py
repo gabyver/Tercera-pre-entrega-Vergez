@@ -21,5 +21,5 @@ from ropa.views import crear_prendas, buscar_prendas
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("ropa/", include("tienda_ropa.urls"),
+    path("ropa/", include("tienda_ropa.urls")),
 ]
