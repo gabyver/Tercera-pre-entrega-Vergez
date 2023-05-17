@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from ropa.views import crear_prendas, buscar_prendas
+from ropa.views import crear_prendas, buscar_prendas, listar_prendas, inicio
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', inicio),
     path("ropa/", include("tienda_ropa.urls")),
 ]

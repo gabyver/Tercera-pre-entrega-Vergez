@@ -5,14 +5,16 @@
     <div>
         <h1>Lista de Prendas</h1>
         <ul>
-        <a href="{% url 'crear_prenda' %}" class="btn btn-success">Crear Prenda</a>
-        <br><br>
-        <form action= "{% url 'buscar_prendas' %}" method= "post">
-            {% csrf_token %}
-            <input type="text" name="busqueda">
-            <input type="submit" value="Buscar prendas">
-            </form>
-            <br><br>
+            {% for prenda in prendas %}
+            <li>{{prenda.nombre}},{{prenda.categoria}}</li>
+                <a href="{% url 'crear_prenda' %}" class="btn btn-success">Crear Prenda</a>
+                <br><br>
+                <form action= "{% url 'buscar_prendas' %}" method= "post">
+                    {% csrf_token %}
+                    <input type="text" name="busqueda">
+                    <input type="submit" value="Buscar prendas">
+                </form>
+                <br><br>
         </ul>
     </div>
 </section>
